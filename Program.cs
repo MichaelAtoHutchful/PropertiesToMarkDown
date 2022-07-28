@@ -27,7 +27,7 @@ foreach (var property in propertyFileContent)
         stringBuilder.AppendLine("        <tr>");
         var keyValuePair = property.Split('=');
         var key = keyValuePair[0];
-        var value = keyValuePair[1];
+        var value = keyValuePair.Count() > 1 ? keyValuePair[1] : string.Empty;
         stringBuilder.AppendLine($"            <td>{key}</td>");
         if (addEnvVar?.ToLower() == "y")
         {
